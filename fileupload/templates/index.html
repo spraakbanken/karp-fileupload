@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='karp_favicon.ico') }}"/>
+      <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}"/>
       <link href="{{ url_for('static', filename='styles.css') }}" type="text/css" rel="stylesheet" />
     </head>
 
@@ -12,8 +12,8 @@
 <div class="main">
   <div class="pre-upload">
     <div class="header">
-        <h1><a href="{{ url_for('upload_file') }}">Karps filuppladdning</a></h1>
-        <a href="{{ url_for('upload_file') }}"><img class="header-image" src="{{ url_for('static', filename='karp.png') }}"></img></a>
+        <h1><a href="{{ url_for('general.upload_file') }}">Karps filuppladdning</a></h1>
+        <a href="{{ url_for('general.upload_file') }}"><img class="header-image" src="{{ url_for('static', filename='karp.png') }}"></img></a>
     </div>
     <div style="clear: both;">
       <p>Här kan du ladda upp filer till Karps SKBL-databas.</p>
@@ -34,7 +34,7 @@
 
   {% if preview   %}
   <div class="preview">
-    <img src="{{ url_for('send_file', filename=preview) }}"></img>
+    <img src="{{ url_for('general.send_file', filename=preview) }}"></img>
   </div>
   {% endif %}
 </div>
