@@ -1,13 +1,13 @@
 RewriteEngine On
 RewriteRule ^files/ - [END]
 RewriteRule ^(.*)$ http://localhost:5012/$1 [P,R]
-Header edit* Location "http://localhost:5012" "https://spraakbanken.gu.se/karp/data/karp-fileupload"
+Header edit* Location "http://localhost:5012" "https://spraakbanken.gu.se/karp/data/skbl"
 
 # Authentication
 AuthType Basic
 AuthName "Karp login (SKBL only)"
 AuthBasicProvider wsgi
-WSGIAuthUserScript /var/www/html_sb/karp_data/karp-fileupload/auth.wsgi
+WSGIAuthUserScript /var/www/html_sb/karp_data/skbl/auth.wsgi
 RequestHeader set X-REMOTE-USER %{REMOTE_USER}s
 
 # Tillåt OPTIONS för CORS från Karp
