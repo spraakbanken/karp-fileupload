@@ -1,5 +1,7 @@
 config.py
+auth.wsgi
 .vscode
+.python-version
  
 # Byte-compiled / optimized / DLL files
 __pycache__/

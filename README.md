@@ -1,11 +1,11 @@
 # Karp-Fileupload
 
-Python 2 flask application for uploading files.
+Python 3 flask application for uploading files onto a server.
 
 ## Setup
-* Install python 2 virtual environment and install its requirements:
+* Install python 3 virtual environment and install its requirements:
 ```
-virtualenv venv
+pyvenv-3.4 venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -16,4 +16,9 @@ touch log.txt
 chmod o+w log.txt
 ```
 * Copy `config_default.py` to `config.py` and set variables inside the script.
-* Run index.wsgi. Your application should now be up and running.
+* Create new entry in supervisord and reload, e.g:
+
+ ```
+[program:karp-fileupload]
+ command=/var/www/html_sb/karp_data/karp-fileupload/venv/bin/gunicorn --chdir /var/www/html_sb/karp_data/karp-fileupload -b "0.0.0.0:5012" fileupload:create_app()
+ ```

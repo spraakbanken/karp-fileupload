@@ -34,7 +34,7 @@ def upload_file():
 
     if request.method == "POST":
         try:
-            user = request.environ["REMOTE_USER"]
+            user = request.environ.get("HTTP_X_REMOTE_USER") or "unknown user"
             log.debug("User: %s", user)
 
             # URL upload
@@ -234,6 +234,8 @@ def get_filelist():
         return link
 
     def get_source_url(filepath):
+        # Not working because of wrong server name. Couldn't fix it.
+        # return url_for("general.send_file", filename=get_filename(filepath), _external=True)
         return os.path.join(current_app.config.get("FILES_URL"), get_filename(filepath))
 
     return [(get_timestamp(i), get_preview_link(i), get_source_url(i))

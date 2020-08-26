@@ -1,3 +1,4 @@
 flask
-Flask-Cors
+flask-reverse-proxy
 Flask-Table
+gunicorn

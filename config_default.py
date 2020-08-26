@@ -17,3 +17,6 @@ ALLOWED_EXTENSIONS = set(["png", "jpg", "jpeg", "gif"])
 
 # Generate with os.urandom(24)
 SECRET_KEY = ""
+
+# Needed if application is not mounted in root
+APPLICATION_ROOT = ""
