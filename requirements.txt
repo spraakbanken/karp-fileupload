@@ -27,13 +27,15 @@ jinja2==3.0.3
     # via
     #   flask
     #   flask-babel
-markupsafe==2.0.1
-    # via jinja2
+markupsafe==2.1.2
+    # via
+    #   jinja2
+    #   werkzeug
 pytz==2021.3
     # via
     #   babel
     #   flask-babel
-werkzeug==2.0.2
+werkzeug==2.2.3
     # via flask
 
 # The following packages are considered to be unsafe in a requirements file:
